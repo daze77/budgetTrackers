@@ -2,8 +2,6 @@ const FILES_TO_CACHE = [
     "/",
     "/index.html",
     "/styles.css",
-    "/api/transaction",
-    "/api/transaction/bulk",
     "/icons/icon-192x192.png",
     "/icons/icon-512x512.png",
     "/index.js",
@@ -17,10 +15,6 @@ const FILES_TO_CACHE = [
   
   // install
   self.addEventListener("install", function(evt) {
-    evt.waitUntil(
-      caches.open(CACHE_NAME).then((cache) => cache.add("/api/transaction"))
-    );
-
     evt.waitUnitl(
         caches.open(CACHE_NAME).then((cache)=> caches.addAll(FILES_TO_CACHE))
     );     
