@@ -16,7 +16,7 @@ const FILES_TO_CACHE = [
   // install
   self.addEventListener("install", function(evt) {
     evt.waitUnitl(
-        caches.open(CACHE_NAME).then((cache)=> caches.addAll(FILES_TO_CACHE))
+        caches.open(CACHE_NAME).then((cache)=> cache.addAll(FILES_TO_CACHE))
     );     
  
     self.skipWaiting();
